@@ -35,7 +35,7 @@ app.post("/api/generate-report", async (req, res) => {
     console.log("Sending prompt to OpenAI...");
     const completion = await openai.chat.completions.create({
       messages: [{ role: "system", content: prompt }],
-      model: "GPT-4.1 nano",
+      model: "gpt-4.1-nano",
     });
 
     const report = completion.choices[0].message.content;
