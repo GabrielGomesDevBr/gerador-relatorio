@@ -1,0 +1,31 @@
+{
+  "name": "psicoia-pro",
+  "version": "1.0.0",
+  "description": "Gerador de relatórios psicológicos com IA",
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "dev:simple": "concurrently \"cd backend && npm run dev:simple\" \"cd frontend && npm start\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:backend:simple": "cd backend && npm run dev:simple",
+    "dev:frontend": "cd frontend && npm start",
+    "build:frontend": "cd frontend && npm run build",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "setup": "npm run install:all && npm run setup:env",
+    "setup:env": "node scripts/setup-env.js",
+    "start": "npm run dev",
+    "start:manual": "./start-manual.sh",
+    "backend:only": "cd backend && node server.js",
+    "frontend:only": "cd frontend && CHOKIDAR_USEPOLLING=true npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "psicologia",
+    "ai",
+    "reports",
+    "healthcare"
+  ],
+  "author": "Gabriel",
+  "license": "MIT"
+}

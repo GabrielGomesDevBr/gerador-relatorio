@@ -27,7 +27,8 @@ const Step1_PatientData = ({ patientData, setPatientData, errors }) => {
   };
 
   const handleDateChange = (newDate) => {
-    setPatientData(prev => ({ ...prev, data_avaliacao: newDate }));
+    const validDate = newDate && !isNaN(newDate.getTime()) ? newDate : new Date();
+    setPatientData(prev => ({ ...prev, data_avaliacao: validDate }));
   };
 
   return (

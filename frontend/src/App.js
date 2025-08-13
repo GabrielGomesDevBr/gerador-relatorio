@@ -1,21 +1,18 @@
 import React from 'react';
 import GenerateReport from './pages/GenerateReport';
-import { CssBaseline, Box } from '@mui/material';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import modernTheme from './theme/modernTheme';
+import GradientBackground from './components/layout/GradientBackground';
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={modernTheme}>
       <CssBaseline />
-      <Box 
-        sx={{
-          width: '100%',
-          minHeight: '100vh',
-          bgcolor: '#f8f9fa' // Um fundo cinza muito claro e neutro
-        }}
-      >
+      <GradientBackground variant="minimal">
         <GenerateReport />
-      </Box>
-    </>
+      </GradientBackground>
+    </ThemeProvider>
   );
 }
 
